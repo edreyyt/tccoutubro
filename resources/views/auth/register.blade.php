@@ -36,12 +36,22 @@
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
+                <x-jet-label for="CEP" value="{{ __('CEP') }}" />
+                <x-jet-input id="CEP" class="block w-full mt-1" type="text" name="CEP" required autofocus autocomplete="old('CEP')" />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="Numresi" value="{{ __('Número residencial') }}" />
+                <x-jet-input id="Numresi" class="block w-full mt-1" type="text" name="Numresi" required autofocus autocomplete="old('Numresi')" />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="password" value="{{ __('Senha') }}" />
                 <x-jet-input id="password" class="block w-full mt-1" type="password" name="password" required autocomplete="new-password" />
             </div>
          
             <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+                <x-jet-label for="password_confirmation" value="{{ __('Repita a senha') }}" />
                 <x-jet-input id="password_confirmation" class="block w-full mt-1" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
