@@ -27,6 +27,12 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'CPF',
+        'Datanasc',
+        'CEP',
+        'Numresi',
+        'Numtel',
+
     ];
 
     /**
@@ -39,6 +45,7 @@ class User extends Authenticatable
         'remember_token',
         'two_factor_recovery_codes',
         'two_factor_secret',
+        'CPF',
     ];
 
     /**
@@ -60,13 +67,4 @@ class User extends Authenticatable
     ];
 }
 
-//class Post extends Model
-//{
-    /**
-     * Get the livros for the blog post.
-     */
-//    public function users()
-  //  {
-       // return $this->hasMany(livros::class);
- //   }
-//}
+

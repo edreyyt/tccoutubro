@@ -13,6 +13,9 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+         <!-- mascara -->
+        <script src="{{ asset('js/jquery-3.6.0.min.js') }}" ></script>
+        <script src="{{ asset('js/jquery.mask.js') }}" ></script>
         <livewire:styles>
 
         @livewireStyles

@@ -26,16 +26,21 @@ class CreateNewUser implements CreatesNewUsers
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
             'CPF' => ['required', 'string', 'max:14'],
-            'datanasc' => ['required', 'date'],
-            'cep' => ['required', 'string', 'max:9'],
-            'numresi' => ['required', 'string', 'max:5'],
-            'numtel' => ['required', 'string', 'max:14'],
+            'Datanasc' => ['required', 'date'],
+            'CEP' => ['required', 'string', 'max:9'],
+            'Numresi' => ['required', 'string', 'max:5'],
+            'Numtel' => ['required', 'string', 'max:15'],
             
         ])->validate();
 
         return User::create([
             'name' => $input['name'],
             'email' => $input['email'],
+            'CPF' => $input['CPF'],
+            'Datanasc' =>$input ['Datanasc'],
+            'CEP' =>$input['CEP'],
+            'Numresi' =>$input ['Numresi'],
+            'Numtel' =>$input ['Numtel'],
             'password' => Hash::make($input['password']),
         ]);
     }
