@@ -9,3 +9,13 @@ class Autor extends Model
 {
     use HasFactory;
 }
+class Post extends Model
+{
+    /**
+     * Get the livros for the blog post.
+     */
+    public function autors()
+    {
+        return $this->hasMany(livros::class);
+    }
+}

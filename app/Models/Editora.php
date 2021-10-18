@@ -9,3 +9,14 @@ class Editora extends Model
 {
     use HasFactory;
 }
+
+class Post extends Model
+{
+    /**
+     * Get the livros for the blog post.
+     */
+    public function editoras()
+    {
+        return $this->hasMany(livros::class);
+    }
+}

@@ -16,8 +16,7 @@ class CreateTransacaosTable extends Migration
         Schema::create('transacaos', function (Blueprint $table) {
             $table->id();
             $table->string('tipo');
-            //$table->foreign('usuariocriador')->references('usuariocriador')->on('livros');
-            //$table->foreign('usuariorecebedor')->references('nome')->on('users');
+            $table->foreignId('User_id')->constrained();
             $table->timestamps();
             $table->softDeletes();
         });

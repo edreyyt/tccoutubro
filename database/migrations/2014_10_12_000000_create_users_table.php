@@ -25,9 +25,9 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->string('CPF', 14)->unique();
             $table->date('Datanasc');
-            $table->string('CEP', 8);
+            $table->string('CEP', 9);
             $table->string('Numresi', 5);
-            $table->string('Numtel', 11);
+            $table->string('Numtel', 14);
             $table->integer('nivel')->unsined()->default(99);
             $table->softDeletes();
         

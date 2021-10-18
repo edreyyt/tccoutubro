@@ -59,3 +59,14 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 }
+
+//class Post extends Model
+//{
+    /**
+     * Get the livros for the blog post.
+     */
+//    public function users()
+  //  {
+       // return $this->hasMany(livros::class);
+ //   }
+//}

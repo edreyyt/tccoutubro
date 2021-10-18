@@ -22,9 +22,9 @@ class CreateLivrosTable extends Migration
             $table->string('edicao');
             $table->string('categoria');
             $table->string('idioma');
-            //$table->foreignId('autors_nome')->constrained();
+            $table->string('autor_nome');
             $table->foreignId('User_id')->constrained();
-            //$table->foreignId('editora_nome')->constrained();
+            $table->string('editora_nome');
             $table->timestamps();
             $table->softDeletes();
         });
