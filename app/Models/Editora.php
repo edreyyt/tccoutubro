@@ -8,15 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Editora extends Model
 {
     use HasFactory;
+
+
+public function Editora()
+{
+    return $this->hasMany(livro::class, 'editora_nome');
 }
 
-class Post extends Model
-{
-    /**
-     * Get the livros for the blog post.
-     */
-    public function editoras()
-    {
-        return $this->hasMany(livros::class);
-    }
+
 }

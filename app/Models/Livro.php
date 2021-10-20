@@ -8,28 +8,26 @@ use Illuminate\Database\Eloquent\Model;
 class Livro extends Model
 {
     use HasFactory;
-}
-class Phone extends Model
-{
-    public function livros()
-    {
-        return $this->belongsTo(users::class);
-    }
-}
 
-class Phone extends Model
-{
-    public function livros()
-    {
-        return $this->belongsTo(editora::class);
-    }
-}
+    protected $fillable = [
+        'id',
+        'nome',
+        'desc',
+        'caract',
+        'isbm',
+        'edicao',
+        'categoria',
+        'idioma',
+        'autor_nome',
+        'editora_nome',
+    ];
 
-class Phone extends Model
-{
-    public function livros()
+        public function livros()
     {
-        return $this->belongsTo(autors::class);
+        return $this->belongsTo(user::class, 'user_id');
+        return $this->belongsTo(autor::class, 'autor_nome');
+        return $this->belongsTo(editora::class, 'editora_nome');
     }
+
 }
 
