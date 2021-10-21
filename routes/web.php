@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');
 
 Auth::routes();
 
@@ -27,4 +27,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/maskedform', function() {
 	return view ('livewireform');
+});
+
+Route::group(['middleware' => ['auth:sanctum', 'verified'] ], function()
+{
+     Route::get('/dashboard', function () {
+         return view('dashboard');
+     })->name('dashboard');
+    
+    Route::get('/usuarios/lista', \App\Http\Livewire\Usuarios\Lista::class)->name('usuarios.lista');
+     
 });
