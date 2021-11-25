@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AnuncioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,16 +26,18 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
 Route::get('/maskedform', function() {
 	return view ('livewireform');
 });
-
 Route::group(['middleware' => ['auth:sanctum', 'verified'] ], function()
 {
-     Route::get('/dashboard', function () {
-         return view('dashboard');
-     })->name('dashboard');
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
     
-    Route::get('/usuarios/lista', \App\Http\Livewire\Usuarios\Lista::class)->name('usuarios.lista');
+    Route::get('/usuarios/lista', \App\Http\Livewire\Usuarios\Lista::class)->name('usuarios.lista'); //negocio do torres\\
+    Route::get('/post', [AnuncioController::class , 'Telacriar']);
      
 });
+

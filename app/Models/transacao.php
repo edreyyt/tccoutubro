@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class transacao extends Model
 {
     use HasFactory;
+        public function livros()
+    {
+        return $this->belongsTo(user::class, 'user_id');
+        return $this->belongsTo(livros::class, 'livro_id');
+    }
 }
+
