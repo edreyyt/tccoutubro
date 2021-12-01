@@ -14,9 +14,15 @@
             }
         </style>
     </head>
+    
+    <header class=" flex bg-gray-100 dark:bg-gray-900">
+    <img href="/home" height="45" width="45" src="/img/librisemfundo.png">
+    </header>
+
     <body class="antialiased">
-        {{-- <div class="relative flex justify-center min-h-screen py-4 bg-gray-100 items-top dark:bg-gray-900 sm:items-center sm:pt-0">
-            
+    {{-- <div class="relative flex justify-center min-h-screen py-4 bg-gray-100 items-top dark:bg-gray-900 sm:items-center sm:pt-0">
+
+        
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                     <svg width="250" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -30,17 +36,22 @@
             @if (Route::has('login'))
                 <div class="fixed top-0 right-0 hidden px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline dark:text-gray-500">Dashboard</a>
+                    <a href="{{ url('/user/profile') }}" class="text-sm text-gray-700 underline dark:text-gray-500">Perfil</a>
+                    
+                    <a href="/anuncios/1" class="text-sm text-gray-700 underline dark:text-gray-500">Meus Anúncios</a> 
+                    
+                    <a href="/post" class="text-sm text-gray-700 underline dark:text-gray-500">Criar um anúncio</a> 
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline dark:text-gray-500">Entrar </a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline dark:text-gray-500">Cadastrar-se</a>
-                        @endif
+                    <a href="{{ route('login') }}" class="text-sm text-gray-700 underline dark:text-gray-500">Entrar </a>
+                    
+                    @if (Route::has('register'))
+                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline dark:text-gray-500">Cadastrar-se</a>
+                    @endif
                     @endauth
                 </div>
-            @endif
-            <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+                @endif
+                <!-- <slider da pagina/> -->
+                <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
 
             <main class="grid w-full min-h-screen bg-gray-900 place-content-center">
             
@@ -67,7 +78,6 @@
                         </svg>
                     </button>
             
-<!-- <slider da pagina/> -->
 
                     <div class="relative h-80" style="width: 40rem;">
                         <template x-for="(image, index) in images">
@@ -87,7 +97,7 @@
                     Alpine.data('imageSlider', () => ({
                         currentIndex: 1,
                         images: [
-                            'https://prnt.sc/1xalcqu',
+                            '/img/IMG.jpg',
                             'https://unsplash.it/640/425?image=40',
                             'https://unsplash.it/640/425?image=50'
                         ],
@@ -106,7 +116,9 @@
             </script>
 
 <!-- <fim do slider da pagina/> -->
-
-            
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>       
 
 @endsection

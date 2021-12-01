@@ -10,18 +10,30 @@
             <script src="/js/app.js"></script>
             <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
             <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
-
+            <link rel="stylesheet" href="/css/app.css">
         </head>
         <body>
             <header>
-               <script>
-                 < asset(librisemfundo.png)><>
-                 </script>
+            <!-- <img src="/img/librisemfundo.png"> -->
             </div>
+              </div>
+            </nav>
             </header>   
-            @yield('content')
+  <main>
+    @if(session('msg')) 
+    <div>
+      <svg class="w-5 h-5 inline mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+      <span class="font-medium">{{ session('msg') }}</span>
+            @endif
+         @yield('content')
+      </div>
+  </div>
+  </main>
+            
+            
 
-{{-- rodape              --}}
+
+{{-- rodape --}}
 
 <footer class="relative pt-8 pb-6 bg-gray-900">
   <div class="container px-4 mx-auto">

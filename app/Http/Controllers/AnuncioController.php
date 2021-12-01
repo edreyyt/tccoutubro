@@ -7,9 +7,9 @@ use App\Models\Livro;
 
 class AnuncioController extends Controller
 {
-    public function Telacriar(){
+    public function anuncios(){
         $post = Livro::All();
-        return view  ('livewire.post', ['post' => $post]);
+        return view  ('post', ['post' => $post]);
 
     }
 }

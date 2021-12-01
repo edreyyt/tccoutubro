@@ -16,15 +16,16 @@ class CreateLivrosTable extends Migration
         Schema::create('livros', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('desc');
+            $table->string('descr')->nullable();
+            $table->enum('status', ['VE', 'TR', 'EM']); //venda, troca, emprestimo
             $table->string('caract');
             $table->integer('isbm');
-            $table->string('edicao');
+            $table->string('edicao')->nullable();
             $table->string('categoria');
             $table->string('idioma');
-            $table->string('autor_nome');
+            $table->string('autor_nome')->nullable();
             $table->foreignId('User_id')->constrained();
-            $table->string('editora_nome');
+            $table->string('editora_nome')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

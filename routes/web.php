@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnuncioController;
+use App\Http\Controllers\CriarController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +39,15 @@ Route::group(['middleware' => ['auth:sanctum', 'verified'] ], function()
     })->name('dashboard');
     
     Route::get('/usuarios/lista', \App\Http\Livewire\Usuarios\Lista::class)->name('usuarios.lista'); //negocio do torres\\
-    Route::get('/post', [AnuncioController::class , 'Telacriar']);
      
 });
+
+Route::get('/anuncios/{id}',[AnuncioController::class , 'anuncios']
+	
+);
+
+Route::get('/post', [CriarController::class, 'posts']); 
+
+Route::post('/post', [CriarController::class, 'livros']); 
+
 

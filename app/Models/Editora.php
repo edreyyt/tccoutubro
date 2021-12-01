@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Editora extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'venda',
+        'troca',
+        'emprestimo',
+    ];
+
 
 
 public function Editora()

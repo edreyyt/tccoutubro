@@ -12,7 +12,7 @@ class Livro extends Model
     protected $fillable = [
         'id',
         'nome',
-        'desc',
+        'descr',
         'caract',
         'isbm',
         'edicao',
@@ -20,6 +20,7 @@ class Livro extends Model
         'idioma',
         'autor_nome',
         'editora_nome',
+        'imagem',
     ];
 
         public function livros()
