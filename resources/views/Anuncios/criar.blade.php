@@ -5,7 +5,8 @@
    <h2>Crie o seu evento! </h2>
    <form action="/post" method="POST" enctype="multipart/form-data">
        <div class="form-group">
-       
+          
+          @csrf
        <div class="form-group">
            <label for="title">Qual será seu tipo de transação?</label>
            <select name="transacao" id="transacao" class="form-control">
@@ -14,11 +15,10 @@
                <option value="EM"> Empréstimo </option>
         </div>
         
-        @csrf
 
         <div class="form-group">
-           <label for="image">Descrição:</label>
-           <input type="file" id="imagem" class="form-control-file">
+           <label for="image">Imagem do Livro:</label>
+           <input type="file" id="image" name="image" class="form-control-file">
         </div>  
 
         <div class="form-group">

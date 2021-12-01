@@ -35,9 +35,9 @@ class CriarController extends Controller
 
                 $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
 
-                $request->image->move(public_path('img/imagem_anuncios'), $imageName);
+                $requestImage->move(public_path('\img\imagem_anuncios'), $imageName);
 
-                $criar->image = $imageName;
+                $criar->image = $imageName; 
 
             }
 

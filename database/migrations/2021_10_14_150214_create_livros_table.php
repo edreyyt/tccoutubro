@@ -26,6 +26,7 @@ class CreateLivrosTable extends Migration
             $table->string('autor_nome')->nullable();
             $table->foreignId('User_id')->constrained();
             $table->string('editora_nome')->nullable();
+            $table->string('image');
             $table->timestamps();
             $table->softDeletes();
         });

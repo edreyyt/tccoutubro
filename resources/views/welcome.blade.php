@@ -16,7 +16,7 @@
     </head>
     
     <header class=" flex bg-gray-100 dark:bg-gray-900">
-    <img href="/home" height="45" width="45" src="/img/librisemfundo.png">
+    <img height="45" width="45" src="/img/librisemfundo.png">
     </header>
 
     <body class="antialiased">
@@ -50,7 +50,7 @@
                     @endauth
                 </div>
                 @endif
-                <!-- <slider da pagina/> -->
+                 <slider da pagina/>
                 <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
 
             <main class="grid w-full min-h-screen bg-gray-900 place-content-center">
@@ -113,7 +113,7 @@
                         }
                     }))
                 })
-            </script>
+            </script> 
 
 <!-- <fim do slider da pagina/> -->
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

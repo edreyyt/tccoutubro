@@ -47,7 +47,8 @@ Route::get('/anuncios/{id}',[AnuncioController::class , 'anuncios']
 );
 
 Route::get('/post', [CriarController::class, 'posts']); 
-
 Route::post('/post', [CriarController::class, 'livros']); 
+Route::get('/post/{$id}', [CriarController::class, 'anuncio_page']); 
+
 
 
