@@ -14,10 +14,6 @@
             }
         </style>
     </head>
-    
-    <header class=" flex bg-gray-100 dark:bg-gray-900">
-    <img height="45" width="45" src="/img/librisemfundo.png">
-    </header>
 
     <body class="antialiased">
     {{-- <div class="relative flex justify-center min-h-screen py-4 bg-gray-100 items-top dark:bg-gray-900 sm:items-center sm:pt-0">

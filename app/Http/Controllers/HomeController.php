@@ -26,6 +26,8 @@ class HomeController extends Controller
     public function index()
     {
   
-        return view('home');
+        $post = Livro::All();
+
+        return view  ('post', ['post' => $post]);
     }
 }
