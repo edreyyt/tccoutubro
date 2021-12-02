@@ -21,13 +21,18 @@ class Livro extends Model
         'autor_nome',
         'editora_nome',
         'imagem',
+        'User_id',
     ];
 
-        public function livros()
-    {
-        return $this->belongsTo(user::class, 'user_id');
-        return $this->belongsTo(autor::class, 'autor_nome');
-        return $this->belongsTo(editora::class, 'editora_nome');
+    //     public function livros()
+    // {
+    //     return $this->belongsTo(user::class, 'user_id');
+    //     return $this->belongsTo(autor::class, 'autor_nome');
+    //     return $this->belongsTo(editora::class, 'editora_nome');
+    // }
+
+    public function proprietario(){
+        return $this->belongsTo(User::class, 'User_id');
     }
 
 }

@@ -24,13 +24,14 @@
         <div class="w-full lg:w-6/12 px-4">
           <h2 class="text-4xl font-semibold text-gray-400">Anúncios</h2>
           <p class="text-lg leading-relaxed mt-4 mb-4 text-gray-500">
-            Listagem dos anúncios do usuário:
+            Lista dos anúncios do usuário:
           </p>
         </div>
       </div>
         @forelse($post as $livro)
+        
         <div class="col-span-2 sm:col-span-4 xl:col-span-4 justify-center" >
-        <img src="public/img/imagem_anuncios">  
+        <img height="120" width="120"src="{{asset('/img/imagem_anuncios'). '/'. $livro->image}}">  
         <h3 class="text-gray-400 bg-center">Nome do Livro: {{ $livro->nome }}</h3>
           
           <p class="text-gray-400 bg-center">
@@ -53,6 +54,9 @@
           </p>
           <p class="text-gray-400 bg-center">
         Editora:{{ $livro->editora_nome }}
+          </p>
+          <p class="text-gray-400 bg-center">
+        proprietario:{{ $livro->proprietario->nome }}
           </p>
         </div>
         <div class="col-span-2 sm:col-span-1 xl:col-span-1 italic "></div>

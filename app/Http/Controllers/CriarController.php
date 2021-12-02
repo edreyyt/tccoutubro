@@ -33,7 +33,7 @@ class CriarController extends Controller
                 
                 $extensionImage = $request->image->extension();
 
-                $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+                $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extensionImage;
 
                 $requestImage->move(public_path('\img\imagem_anuncios'), $imageName);
 
@@ -47,6 +47,10 @@ class CriarController extends Controller
 
             return redirect ('/')->with('msg', 'Anúncio criado com sucesso!');
 
+
+    }
+
+    public function show($id){
 
     }
 }
