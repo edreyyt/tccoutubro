@@ -17,9 +17,8 @@ class CreateLivrosTable extends Migration
             $table->id();
             $table->string('nome');
             $table->string('descr')->nullable();
-            $table->enum('status', ['VE', 'TR', 'EM']); //venda, troca, emprestimo
+            $table->enum('status', ['VENDA', 'TROCA', 'EMPRESTIMO']); //venda, troca, emprestimo
             $table->string('caract');
-            $table->integer('isbm');
             $table->string('edicao')->nullable();
             $table->string('categoria');
             $table->string('idioma');

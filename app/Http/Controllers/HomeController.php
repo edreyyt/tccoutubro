@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Livro;
 
+
+
 class HomeController extends Controller
 {
     /**
@@ -14,8 +16,14 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
         $home = Livro::All();
+    }
+
+    public function welcome(){
+        $livros = Livro::All();
+
+        return view('welcome')->withLivros($livros);
     }
 
     /**
@@ -26,8 +34,9 @@ class HomeController extends Controller
     public function index()
     {
   
-        $post = Livro::All();
+        $livros = Livro::All();
 
-        return view  ('post', ['post' => $post]);
+        return view('welcome')->withLivros($livros);
     }
+
 }

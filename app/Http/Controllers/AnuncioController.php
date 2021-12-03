@@ -9,9 +9,13 @@ use App\Models\User;
 class AnuncioController extends Controller
 {
     public function anuncios(){
-        $post = Livro::All();
-        $post = User::All();
-        return view  ('post', ['post' => $post]);
+        $livros = Livro::All();
+        // $post = User::All();
+        return view('post')->withLivros($livros);
 
+    }
+
+    public function termos(){
+        return view('termos');
     }
 }

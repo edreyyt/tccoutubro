@@ -6,8 +6,8 @@
 <html>
 <head>   
 </head>
-<header class=" pt-8 pb-6 bg-gray-900 ">
-   <a href="{{ url('/') }}" class="text-white uppercase underline  text-align: left">Voltar!</a>
+<header class=" pt-8 pb-6 bg-white ">
+   <a href="{{ url('/') }}" class="text-black underline  text-align: left">Voltar!</a>
 
 </header>
    
@@ -16,14 +16,14 @@
       <h2 class="text-gray-400">Crie o seu Anúncio! </h2>
       <form action="/post" method="POST" enctype="multipart/form-data">
           <div class="form-group">  
-<body class="pt-8 pb-6 bg-gray-900" >          
+<body class="bg-white" >          
           @csrf
        <div class="form-group text-gray-400">
            <label for="title">Qual será seu tipo de transação?</label>
-           <select name="transacao" id="transacao" class="form-control">
-               <option value="VE"> Venda </option>
-               <option value="TR"> Troca </option>
-               <option value="EM"> Empréstimo </option>
+           <select name="status" id="status" class="form-control">
+               <option value="VENDA"> Venda </option>
+               <option value="TROCA"> Troca </option>
+               <option value="EMPRESTIMO"> Empréstimo </option>
         </div>
         
 
@@ -42,9 +42,9 @@
            <textarea name="descr" id="descr" cols="20" rows="" class="forms-control" placeholder="Sobre o que o livro se trata?"> </textarea>
         </div>  
 
-        <div class="form-group text-gray-400">
-           <label for="title">Característica:</label>
-           <input type="text" class="form-control" id="caract" name="caract" placeholder="Característica do Livro">
+        <div class="form-group text-gray-400 ">
+           <label for="title">Estado:</label>
+           <input type="text" class="form-control" id="caract" name="caract" placeholder="Como o livro está fisicamente ?">
         </div>    
 
 
@@ -76,7 +76,7 @@
            <label for="title">Editora:</label>
            <input type="text" class="form-control" id="editora_nome" name="editora_nome" placeholder="Editora do Livro">
         </div>    
-        <input type="submit" class="btn btn-primary" value="Criar Anúncio!">
+        <input type="submit" class="btn btn-primary text-black border-black bg-gray" value="Criar Anúncio!">
 </div>
 </body>
 </html>

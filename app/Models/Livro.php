@@ -14,13 +14,13 @@ class Livro extends Model
         'nome',
         'descr',
         'caract',
-        'isbm',
         'edicao',
         'categoria',
+        'status',
         'idioma',
         'autor_nome',
         'editora_nome',
-        'imagem',
+        'image',
         'User_id',
     ];
 

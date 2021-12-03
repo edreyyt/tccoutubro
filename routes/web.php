@@ -16,9 +16,7 @@ use App\Http\Controllers\CriarController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'welcome']);
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
@@ -39,16 +37,22 @@ Route::group(['middleware' => ['auth:sanctum', 'verified'] ], function()
     })->name('dashboard');
     
     Route::get('/usuarios/lista', \App\Http\Livewire\Usuarios\Lista::class)->name('usuarios.lista'); //negocio do torres\\
-     
+    Route::put('/post/edit/{id}', [CriarController::class, 'editar']);
+    Route::get('/termos', [CriarController::class, 'termos']);
+    Route::post('/post', [CriarController::class, 'livros']); 
+    Route::get('/post', [CriarController::class, 'posts']);
 });
 
 Route::get('/anuncios/{id}',[AnuncioController::class , 'anuncios']
-	
+
 );
 
-Route::get('/post', [CriarController::class, 'posts']); 
-Route::post('/post', [CriarController::class, 'livros']); 
-Route::get('/post/{$id}', [CriarController::class, 'anuncio_page']); 
+Route::delete('/post/delete/{id}', [CriarController::class, 'deletar']);
+
+ Route::get('/postdetalhe/{id}', [CriarController::class, 'anuncio_page']); 
+
+
+
 
 
 

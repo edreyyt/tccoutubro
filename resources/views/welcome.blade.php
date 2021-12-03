@@ -15,8 +15,8 @@
         </style>
     </head>
 
-    <body class="antialiased">
-    {{-- <div class="relative flex justify-center min-h-screen py-4 bg-gray-100 items-top dark:bg-gray-900 sm:items-center sm:pt-0">
+    <body class="antialiased justify-items-center">
+    {{-- <div class="relative flex justify-center min-h-screen py-4 bg-gray-100 items-top dark:bg-gray-900 ">
 
         
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
@@ -47,84 +47,108 @@
                 </div>
                 @endif
 
-                 {{-- <slider da pagina/> --}}
-                <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+                <main class="w-full min-h-full grid place-content-center bg-white">
 
-            <main class="grid w-full min-h-screen bg-gray-900 place-content-center">
-            
-                <div x-data="imageSlider" class="relative max-w-2xl p-2 mx-auto overflow-hidden bg-gray-100 rounded-md sm:p-4">
-            
-                    <div class="absolute z-10 px-2 text-sm text-center text-white bg-gray-600 rounded-full top-5 right-5">
-                        <span x-text="currentIndex"></span>/<span x-text="images.length"></span>
-                    </div>
-            
-                    <button @click="previous()"
-                        class="absolute z-10 flex items-center justify-center -translate-y-1/2 bg-gray-100 rounded-full shadow-md left-5 top-1/2 w-11 h-11">
-                        <svg class="w-8 h-8 font-bold text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7">
-                            </path>
-                        </svg>
-                    </button>
-            
-                    <button @click="forward()"
-                        class="absolute z-10 flex items-center justify-center -translate-y-1/2 bg-gray-100 rounded-full shadow-md right-5 top-1/2 w-11 h-11">
-                        <svg class="w-8 h-8 font-bold text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </button>
-            
+    <div x-data="imageSlider" class="bg-gray-100 rounded-md max-w-2xl mx-auto relative p-2 sm:p-4 overflow-hidden">
 
-                    <div class="relative h-80" style="width: 40rem;">
-                        <template x-for="(image, index) in images">
-                            <div x-show="currentIndex == index + 1" x-transition:enter="transition transform duration-300"
-                                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
-                                x-transition:leave="transition transform duration-300" x-transition:leave-start="opacity-100"
-                                x-transition:leave-end="opacity-0" class="absolute top-0">
-                                <img :src="image" alt="image" class="rounded-sm">
-                            </div>
-                        </template>
-                    </div>
+        <div class="rounded-full bg-gray-600 text-white absolute top-5 right-5 text-sm px-2 text-center z-10">
+            <span x-text="currentIndex"></span>/<span x-text="images.length"></span>
+        </div>
+
+        <button @click="previous()"
+            class="absolute left-5 top-1/2 -translate-y-1/2 bg-gray-100 rounded-full w-11 h-11 flex justify-center items-center shadow-md z-10">
+            <svg class="w-8 h-8 font-bold text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7">
+                </path>
+            </svg>
+        </button>
+
+        <button @click="forward()"
+            class="absolute right-5 top-1/2 -translate-y-1/2 bg-gray-100 rounded-full w-11 h-11 flex justify-center items-center shadow-md z-10">
+            <svg class="w-8 h-8 font-bold text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </button>
+
+        <div class="relative h-80" style="width: 30rem;">
+            <template x-for="(image, index) in images">
+                <div x-show="currentIndex == index + 1" x-transition:enter="transition transform duration-300"
+                    x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                    x-transition:leave="transition transform duration-300" x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0" class="absolute top-0">
+                    <img :src="image" alt="image" class="rounded-sm">
                 </div>
-            </main>
-            
-            <script>
-                document.addEventListener('alpine:init', () => {
-                    Alpine.data('imageSlider', () => ({
-                        currentIndex: 1,
-                        images: [
-                            '/img/IMG.jpg',
-                            'https://unsplash.it/640/425?image=40',
-                            'https://unsplash.it/640/425?image=50'
-                        ],
-                        previous() {
-                            if (this.currentIndex > 1) {
-                                this.currentIndex = this.currentIndex - 1;
-                            }
-                        },
-                        forward() {
-                            if (this.currentIndex < this.images.length) {
-                                this.currentIndex = this.currentIndex + 1;
-                            }
-                        }
-                    }))
-                })
-            </script> 
-</body>
+            </template>
+        </div>
+    </div>
+</main>
 
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('imageSlider', () => ({
+            currentIndex: 1,
+            images: [
+                '/img/IMG.jpg',
+                '/img/slider-2.jpg',
+                '/img/slider-3.jpg'
+            ],
+            previous() {
+                if (this.currentIndex > 1) {
+                    this.currentIndex = this.currentIndex - 1;
+                }
+            },
+            forward() {
+                if (this.currentIndex < this.images.length) {
+                    this.currentIndex = this.currentIndex + 1;
+                }
+            }
+        }))
+    })
+</script>
+
+@forelse($livros as $livro)
+
+
+ <div class="w-full my-12 justify-items-start">
+    <div class="max-w-5xl mx-auto px-6 sm:px-6 lg:px-8">
+            <div class="bg-white w-full shadow rounded p-8">
+                <h1 class="md:text-3xl text-2xl font-bold text-gray-800">{{$livro->nome}}</h1>
+                <div class="grid grid-cols-1 gap-8 mt-6">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-6/12 rounded overflow-hidden">
+                            <img height="250" width="250" class="object " src="{{ asset('img/imagem_anuncios') . '/' . $livro->image}}">
+                        </div>
+                        <div class="w-full md:w-6/12 mt-4 md:mt-0 md:ml-4">
+                            <h2 class="text-lg font-semibold leading-tight text-gray-800">Gênero do Livro: {{$livro->categoria}}</h2>
+                            <p class="leading-normal pt-2">Descrição do Livro: {{$livro->descr}}</p>
+                            <p class="leading-normal pt-2">Tipo de transação: {{$livro->status}}</p>
+                            <p class="leading-normal pt-2">Idioma: {{$livro->idioma}}</p>
+                            <a class="leading-normal pt-2 hover:underline text-blue-500 underline" href="{{url('/postdetalhe/' . $livro->id) }}">Ver anúncio.   </a>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@empty
+<p class="text-black text-lg text-center ">Desculpe, mas não há anúncios. </p>
+@endforelse 
+</body>
 <!-- <fim do slider da pagina/> -->
 {{-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> --}}
-       
-{{-- @forelse($post as $livro)
-<div class="card-boty">
-    <p clas=></p>
-    <h1>{{$livro->nome}}</h1>
 
-</div>
-@empty
-<p>Desculpe, mas não há anúncios. </p>
-@endforelse --}}
-</html>
+
+
+
+
+
+
+
 @endsection
+</html>
+
